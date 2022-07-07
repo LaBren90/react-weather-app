@@ -1,11 +1,20 @@
-import "./App.css";
+import "./Weather.css";
+import Weather from "./Weather.js";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">Hello world</header>
+      <Weather
+        city="London"
+        day="Wednesday"
+        date={16}
+        month="March"
+        time="09:00"
+        temperature={20}
+        condition="clear"
+        windspeed={1}
+        humidity={80}
+      />
     </div>
   );
 }
-
-export default App;
