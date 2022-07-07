@@ -8,7 +8,7 @@ export default function Weather(props) {
         <input
           type="text"
           placeholder="Search for a city"
-          autofocus
+          autoFocus
           id="current-city"
         />
         <input type="button" className="search-button" value="Search" />
@@ -65,59 +65,55 @@ export default function Weather(props) {
 
       <div className="forecast">
         <h3>
-          <div class="row">
-            <div class="col">Wednesday</div>
-            <div class="col">
-              <i class="fa-solid fa-cloud-showers-heavy"></i>
+          <div className="row">
+            <div className="col">Wednesday</div>
+            <div className="col">
+              <i className="fa-solid fa-cloud-showers-heavy"></i>
             </div>
-            <div class="col">12°C</div>
+            <div className="col">12°C</div>
           </div>
         </h3>
 
         <h3>
-          <div class="row">
-            <div class="col">Thursday</div>
-            <div class="col">
-              <i class="fa-solid fa-sun"></i>
+          <div className="row">
+            <div className="col">Thursday</div>
+            <div className="col">
+              <i className="fa-solid fa-sun"></i>
             </div>
-            <div class="col">15°C</div>
+            <div className="col">15°C</div>
           </div>
         </h3>
 
         <h3>
-          <div class="row">
-            <div class="col">Friday</div>
-            <div class="col">
-              <i class="fa-solid fa-cloud-sun"></i>
+          <div className="row">
+            <div className="col">Friday</div>
+            <div className="col">
+              <i className="fa-solid fa-cloud-sun"></i>
             </div>
-            <div class="col">14°C</div>
+            <div className="col">14°C</div>
           </div>
         </h3>
 
         <h3>
-          <div class="row">
-            <div class="col">Saturday</div>
-            <div class="col">
-              <i class="fa-solid fa-cloud"></i>
+          <div className="row">
+            <div className="col">Saturday</div>
+            <div className="col">
+              <i className="fa-solid fa-cloud"></i>
             </div>
-            <div class="col">14°C</div>
+            <div className="col">14°C</div>
           </div>
         </h3>
 
         <h3>
-          <div class="row">
-            <div class="col">Sunday</div>
-            <div class="col">
-              <i class="fa-solid fa-cloud-rain"></i>
+          <div className="row">
+            <div className="col">Sunday</div>
+            <div className="col">
+              <i className="fa-solid fa-cloud-rain"></i>
             </div>
-            <div class="col">13°C</div>
+            <div className="col">13°C</div>
           </div>
         </h3>
       </div>
-
-      <footer>
-        <a href="/">Open Source Code</a> by Laura Brennan
-      </footer>
     </div>
   );
 }
