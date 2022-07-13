@@ -40,7 +40,7 @@ export default function Weather(props) {
         </form>
         <h1>{weather.city}</h1>
 
-        <h2>
+        <h2 className="mt-5">
           <div className="row">
             <div className="col-4" col-4 id="current">
               <FormattedDate date={weather.date} />

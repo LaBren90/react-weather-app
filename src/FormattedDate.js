@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 
 export default function FormattedDate(props) {
   let days = [
@@ -29,11 +28,11 @@ export default function FormattedDate(props) {
   let day = days[props.date.getDay()];
   let hours = props.date.getHours();
   if (hours < 10) {
-    hours = `0 ${hours}`;
+    hours = `0${hours}`;
   }
   let minutes = props.date.getMinutes();
   if (minutes < 10) {
-    minutes = `0 ${minutes}`;
+    minutes = `0${minutes}`;
   }
   let date = props.date.getDate();
   let month = months[props.date.getMonth()];
@@ -47,8 +46,8 @@ export default function FormattedDate(props) {
         {"  "}
         {month}
       </div>
-      <div className="last-update">
-        Last updated at:
+      <div className="last-update mt-5">Last updated at:</div>
+      <div>
         {hours}:{minutes}
       </div>
     </div>
