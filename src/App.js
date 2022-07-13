@@ -5,17 +5,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather
-          city="London"
-          day="Wednesday"
-          date={16}
-          month="March"
-          time="09:00"
-          temperature={20}
-          condition="clear"
-          windspeed={1}
-          humidity={80}
-        />
+        <Weather defaultCity="London" time="09:00" />
         <footer>
           <a
             href="https://github.com/LaBren90/react-weather-app"
