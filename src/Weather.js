@@ -3,14 +3,24 @@ import "./Weather.css";
 import axios from "axios";
 
 export default function Weather(props) {
-  const [temperature, setTemperature] = useState(null);
-  const [ready, setReady] = useState(false);
+  const [weather, setWeather] = useState({ ready: false });
+
   function showWeather(response) {
-    setTemperature(response.data.main.temp);
-    setReady(true);
+    setWeather({
+      ready: true,
+      temperature: response.data.main.temp,
+      wind: response.data.wind.speed,
+      city: response.data.name,
+      humidity: response.data.main.humidity,
+      condition: response.data.weather[0].description,
+      iconUrl: "http://openweathermap.org/img/wn/01d@2x.png",
+      date: 13,
+      day: "Wednseday",
+      month: "July",
+    });
   }
 
-  if (ready) {
+  if (weather.ready) {
     return (
       <div className="Weather">
         <form id="search-form">
@@ -27,14 +37,14 @@ export default function Weather(props) {
             className="location-button"
           />
         </form>
-        <h1>{props.city}</h1>
+        <h1>{weather.city}</h1>
 
         <h2>
           <div className="row">
             <div className="col-4" col-4 id="current">
-              <div className="day">{props.day}</div>
+              <div className="day">{weather.day}</div>
               <div className="dateMonth">
-                {props.date} {props.month}
+                {weather.date} {weather.month}
               </div>
               <br />
               <div className="last-update">Last updated at: </div>
@@ -45,8 +55,8 @@ export default function Weather(props) {
               <div className="clearfix-weather-icon">
                 <img
                   id="today-icon"
-                  src="http://openweathermap.org/img/wn/01d@2x.png"
-                  alt="Sun"
+                  src={weather.iconUrl}
+                  alt={weather.condition}
                   className="float-left"
                 />
               </div>{" "}
@@ -54,18 +64,21 @@ export default function Weather(props) {
 
             <div className="col-4" col-4>
               <span className="today-temp" id="temp-celsius">
-                {Math.round(temperature)}
+                {Math.round(weather.temperature)}
               </span>
               <span> °C</span>
 
               <ul>
-                <li id="condition">{props.condition}</li>
-                <li>
-                  {" "}
-                  Wind speed: <span id="wind-speed">{props.windspeed}</span>m/s
+                <li id="condition" className="text-capitalize">
+                  {weather.condition}
                 </li>
                 <li>
-                  Humidity: <span id="humidity">{props.humidity}</span>%
+                  {" "}
+                  Wind speed:{" "}
+                  <span id="wind-speed">{Math.round(weather.wind)}</span>m/s
+                </li>
+                <li>
+                  Humidity: <span id="humidity">{weather.humidity}</span>%
                 </li>{" "}
               </ul>
             </div>
