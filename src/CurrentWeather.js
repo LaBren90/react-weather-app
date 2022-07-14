@@ -10,13 +10,13 @@ export default function CurrentWeather(props) {
 
       <h2 className="mt-5">
         <div className="row">
-          <div className="col-4" col-4 id="current">
+          <div className="col-4" id="current">
             <FormattedDate date={props.data.date} />
 
             <br />
           </div>
 
-          <div className="col-4" col-4>
+          <div className="col-4">
             <div className="clearfix-weather-icon">
               <img
                 id="today-icon"
@@ -27,7 +27,7 @@ export default function CurrentWeather(props) {
             </div>{" "}
           </div>
 
-          <div className="col-4" col-4>
+          <div className="col-4">
             <WeatherTemperature celsius={Math.round(props.data.temperature)} />
 
             <ul>
