@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
-import FormattedDate from "./FormattedDate.js";
+
+import CurrentWeather from "./CurrentWeather";
 
 export default function Weather(props) {
   const [weather, setWeather] = useState({ ready: false });
@@ -38,49 +39,7 @@ export default function Weather(props) {
             className="location-button"
           />
         </form>
-        <h1>{weather.city}</h1>
-
-        <h2 className="mt-5">
-          <div className="row">
-            <div className="col-4" col-4 id="current">
-              <FormattedDate date={weather.date} />
-
-              <br />
-            </div>
-
-            <div className="col-4" col-4>
-              <div className="clearfix-weather-icon">
-                <img
-                  id="today-icon"
-                  src={weather.iconUrl}
-                  alt={weather.condition}
-                  className="float-left"
-                />
-              </div>{" "}
-            </div>
-
-            <div className="col-4" col-4>
-              <span className="today-temp" id="temp-celsius">
-                {Math.round(weather.temperature)}
-              </span>
-              <span> °C</span>
-
-              <ul>
-                <li id="condition" className="text-capitalize">
-                  {weather.condition}
-                </li>
-                <li>
-                  {" "}
-                  Wind speed:{" "}
-                  <span id="wind-speed">{Math.round(weather.wind)}</span>m/s
-                </li>
-                <li>
-                  Humidity: <span id="humidity">{weather.humidity}</span>%
-                </li>{" "}
-              </ul>
-            </div>
-          </div>
-        </h2>
+        <CurrentWeather data={weather} />
 
         <div className="forecast">
           <h3>
