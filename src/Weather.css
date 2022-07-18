@@ -43,11 +43,11 @@ ul::first-letter {
 }
 
 .today-icon {
-  width: 100px;
+  width: 80px;
 }
 
 .today-temp {
-  font-size: 80px;
+  font-size: 90px;
 }
 
 .last-update {
@@ -57,4 +57,17 @@ ul::first-letter {
 .forecast {
   margin-top: 50px;
   margin-bottom: 30px;
+}
+
+.WeatherForecast-temperature-max {
+  font-size: 48px;
+}
+
+.WeatherForecast-temperature-min {
+  font-size: 48px;
+  font-weight: 300;
+}
+
+.WeatherForecast-temperature-units {
+  font-weight: 300;
 }

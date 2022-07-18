@@ -13,7 +13,11 @@ export default function WeatherForecast(props) {
               className="today-icon"
             />
           </div>
-          <div className="col mt-4">12°C 4°C</div>
+          <div className="col mt-4">
+            <span className="WeatherForecast-temperature-max">12</span>°C
+            <span className="WeatherForecast-temperature-min"> 4</span>
+            <span className="WeatherForecast-temperature-units">°C</span>
+          </div>
         </div>
       </h3>
 
@@ -27,7 +31,11 @@ export default function WeatherForecast(props) {
               className="today-icon"
             />
           </div>
-          <div className="col mt-4">15°C 5°C</div>
+          <div className="col mt-4">
+            <span className="WeatherForecast-temperature-max">12</span>°C
+            <span className="WeatherForecast-temperature-min"> 4</span>
+            <span className="WeatherForecast-temperature-units">°C</span>
+          </div>
         </div>
       </h3>
 
@@ -41,7 +49,11 @@ export default function WeatherForecast(props) {
               className="today-icon"
             />
           </div>
-          <div className="col mt-4">14°C 5°C</div>
+          <div className="col mt-4">
+            <span className="WeatherForecast-temperature-max">12</span>°C
+            <span className="WeatherForecast-temperature-min"> 4</span>
+            <span className="WeatherForecast-temperature-units">°C</span>
+          </div>
         </div>
       </h3>
 
@@ -55,7 +67,11 @@ export default function WeatherForecast(props) {
               className="today-icon"
             />
           </div>
-          <div className="col mt-4">14°C 6°C</div>
+          <div className="col mt-4">
+            <span className="WeatherForecast-temperature-max">12</span>°C
+            <span className="WeatherForecast-temperature-min"> 4</span>
+            <span className="WeatherForecast-temperature-units">°C</span>
+          </div>
         </div>
       </h3>
 
@@ -69,7 +85,11 @@ export default function WeatherForecast(props) {
               className="today-icon"
             />
           </div>
-          <div className="col mt-4">13°C 3°C</div>
+          <div className="col mt-4">
+            <span className="WeatherForecast-temperature-max">12</span>°C
+            <span className="WeatherForecast-temperature-min"> 4</span>
+            <span className="WeatherForecast-temperature-units">°C</span>
+          </div>
         </div>
       </h3>
     </div>
