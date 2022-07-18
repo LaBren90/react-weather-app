@@ -42,8 +42,8 @@ ul::first-letter {
   margin: 10px;
 }
 
-#today-icon {
-  width: 180px;
+.today-icon {
+  width: 100px;
 }
 
 .today-temp {

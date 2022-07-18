@@ -3,6 +3,7 @@ import "./Weather.css";
 import axios from "axios";
 
 import CurrentWeather from "./CurrentWeather";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [weather, setWeather] = useState({ ready: false });
@@ -57,58 +58,7 @@ export default function Weather(props) {
           />
         </form>
         <CurrentWeather data={weather} />
-
-        <div className="forecast">
-          <h3>
-            <div className="row">
-              <div className="col">Wednesday</div>
-              <div className="col">
-                <i className="fa-solid fa-cloud-showers-heavy"></i>
-              </div>
-              <div className="col">12°C</div>
-            </div>
-          </h3>
-
-          <h3>
-            <div className="row">
-              <div className="col">Thursday</div>
-              <div className="col">
-                <i className="fa-solid fa-sun"></i>
-              </div>
-              <div className="col">15°C</div>
-            </div>
-          </h3>
-
-          <h3>
-            <div className="row">
-              <div className="col">Friday</div>
-              <div className="col">
-                <i className="fa-solid fa-cloud-sun"></i>
-              </div>
-              <div className="col">14°C</div>
-            </div>
-          </h3>
-
-          <h3>
-            <div className="row">
-              <div className="col">Saturday</div>
-              <div className="col">
-                <i className="fa-solid fa-cloud"></i>
-              </div>
-              <div className="col">14°C</div>
-            </div>
-          </h3>
-
-          <h3>
-            <div className="row">
-              <div className="col">Sunday</div>
-              <div className="col">
-                <i className="fa-solid fa-cloud-rain"></i>
-              </div>
-              <div className="col">13°C</div>
-            </div>
-          </h3>
-        </div>
+        <WeatherForecast data={weather} />;
       </div>
     );
   } else {
