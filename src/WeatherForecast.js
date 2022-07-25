@@ -1,10 +1,15 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function WeatherForecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState();
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coord]);
+
   function handleResponse(response) {
     setForecast(response.data.daily);
     setLoaded(true);
@@ -13,105 +18,15 @@ export default function WeatherForecast(props) {
   if (loaded) {
     return (
       <div className="WeatherForecast">
-        <h3>
-          <WeatherForecastDay data={forecast[0]} />
-        </h3>
-
-        <h3>
-          <div className="row">
-            <div className="col mt-4">{forecast[1].dt}</div>
-            <div className="col">
-              <img
-                src={props.data.iconUrl}
-                alt={props.data.condition}
-                className="today-icon"
-              />
-            </div>
-            <div className="col mt-4">
-              <span className="WeatherForecast-temperature-max">
-                {Math.round(forecast[1].temp.max)}
-              </span>
-              °C
-              <span className="WeatherForecast-temperature-min">
-                {" "}
-                {Math.round(forecast[1].temp.min)}
-              </span>
-              <span className="WeatherForecast-temperature-units">°C</span>
-            </div>
-          </div>
-        </h3>
-
-        <h3>
-          <div className="row">
-            <div className="col mt-4">{forecast[2].dt}</div>
-            <div className="col">
-              <img
-                src={props.data.iconUrl}
-                alt={props.data.condition}
-                className="today-icon"
-              />
-            </div>
-            <div className="col mt-4">
-              <span className="WeatherForecast-temperature-max">
-                {Math.round(forecast[2].temp.max)}
-              </span>
-              °C
-              <span className="WeatherForecast-temperature-min">
-                {" "}
-                {Math.round(forecast[2].temp.min)}
-              </span>
-              <span className="WeatherForecast-temperature-units">°C</span>
-            </div>
-          </div>
-        </h3>
-
-        <h3>
-          <div className="row">
-            <div className="col mt-4">{forecast[3].dt}</div>
-            <div className="col">
-              <img
-                src={props.data.iconUrl}
-                alt={props.data.condition}
-                className="today-icon"
-              />
-            </div>
-            <div className="col mt-4">
-              <span className="WeatherForecast-temperature-max">
-                {Math.round(forecast[3].temp.max)}
-              </span>
-              °C
-              <span className="WeatherForecast-temperature-min">
-                {" "}
-                {Math.round(forecast[3].temp.min)}
-              </span>
-              <span className="WeatherForecast-temperature-units">°C</span>
-            </div>
-          </div>
-        </h3>
-
-        <h3>
-          <div className="row">
-            <div className="col mt-4">{forecast[4].dt}</div>
-            <div className="col">
-              <img
-                src={props.data.iconUrl}
-                alt={props.data.condition}
-                className="today-icon"
-              />
-            </div>
-            <div className="col mt-4">
-              <span className="WeatherForecast-temperature-max">
-                {Math.round(forecast[4].temp.max)}
-              </span>
-              °C
-              <span className="WeatherForecast-temperature-min">
-                {" "}
-                {Math.round(forecast[4].temp.min)}
-              </span>
-              <span className="WeatherForecast-temperature-units">°C</span>
-            </div>
-          </div>
-        </h3>
+        {forecast.map(function (dailyForecast, index) {
+          if (index < 6) {
+            return (
+              <h3 key={index}>
+                <WeatherForecastDay data={dailyForecast} />
+              </h3>
+            );
+          }
+        })}
       </div>
     );
   } else {
